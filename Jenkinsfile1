@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Deploy - Nexus'){
             steps{
-                nexusPublisher nexusInstanceId: 'Releases', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [], mavenCoordinate: [artifactId: 'java-tomcat-sample', groupId: 'com.example', packaging: 'war', version: '3.0']]]
+                nexusPublisher nexusInstanceId: 'Releases', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Project2\\MY-Third-Pipeline\\target\\java-tomcat-maven-example.war']], mavenCoordinate: [artifactId: 'java-tomcat-sample', groupId: 'com.example', packaging: 'war', version: '1.0']]]
             }
         }
        
